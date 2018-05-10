@@ -1,0 +1,8 @@
+const constants = {
+  CHANGE_USERNAME: 'CHANGE_USERNAME',
+  ADD_ITEM: 'ADD_ITEM',
+  REMOVE_ITEM: 'REMOVE_ITEM',
+  CHANGE_LOCATION: 'CHANGE_LOCATION'
+}
+
+export default constants
