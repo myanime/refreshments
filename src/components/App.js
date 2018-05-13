@@ -1,8 +1,17 @@
 import React from 'react'
 import AddStuff from '../containers/AddStuff'
+import BottleO from './BottleO'
 const App = () => {
   return(
-    <AddStuff/>
+    <div>
+      <BottleO title="Bottle Shop">
+        <div>Beer Bottle</div>
+        <div>Beer Bottle</div>
+        <div>Beer Bottle</div>
+        <div>Beer Bottle</div>
+      </BottleO>
+      <AddStuff/>
+    </div>
   )
 }
 

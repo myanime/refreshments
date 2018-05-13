@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {addItem} from '../actions/addItem'
-import axios from 'axios'
+import { addItem, printSwearWord } from '../actions/addItem'
+import {getEmail} from "../actions/index";
 
+@connect()
 const AddStuff = ({dispatch}) => {
   let input
   const handleSubmit = (event) => {
@@ -12,14 +13,11 @@ const AddStuff = ({dispatch}) => {
       return
     }
   }
-  const sendToFirebase = async () => {
-    const response = await axios({
-      method: 'get',
-      url: 'https://ryanbase-cefdb.firebaseio.com/custom/-Kl6-0gHEhIDN2AnZcLX.json'
-    })
-    const data = response.data
-    dispatch(addItem(data.email))
-    input.value = data.email
+  const sendToFirebase = () => {
+      dispatch(printSwearWord())
+      dispatch(getEmail())
+      dispatch(addItem("Goofel"))
+    input.value = "good night"
   }
   return (
     <div>
@@ -33,4 +31,4 @@ const AddStuff = ({dispatch}) => {
   )
 }
 
-export default connect()(AddStuff)
+export default AddStuff
